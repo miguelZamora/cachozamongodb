@@ -1,0 +1,57 @@
+
+Para ver las bases de datos disponibles en nuestro servidor
+
+mongod, tecleamos show dbs.
+
+El comando db devuelve la bd actual.
+
+Podemos seleccionar una escribiendo: use mydb. Si no existe,
+se crea autom´aticamente al usarla e insertar algo, sin
+necesitar declaracion explıcita de creacion.
+Se elimina una BD mediante db.dropDatabase(), y una
+coleccion individual mediante db.micoleccion.drop().
+Si necesitamos acudir a la ayuda del sistema para consultar
+alguna funcionalidad podemos hacerlo mediante help, o a la
+
+ayuda de una determinada funcion con
+
+db.nombrefuncion.help().
+
+Consultar la referencia del lenguaje para mas detalle.
+
+
+
+
+comando inicial
+
+docker exec -it mongo mongosh
+
+
+
+C:\Users\gomi\Desktop\test-yaml\mongodb-docker>docker exec -it mongo mongosh
+Current Mongosh Log ID: 682a6ad48bb91c7393d861df
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.0
+Using MongoDB:          8.0.9
+Using Mongosh:          2.5.0
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+test> use admin
+switched to db admin
+admin> db.createUser({
+...   user: "admin",
+...   pwd: "TuClaveSegura",
+...   roles: [{ role: "root", db: "admin" }]
+... })
+{ ok: 1 }
+admin>
+
+
+
+
+
+
